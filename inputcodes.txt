@@ -1,0 +1,19 @@
+users:
+{
+    "username": "Guy",
+    "email": "someguysemail@email.com",
+    "password": "12scadoo"
+}
+
+posts:
+{
+    "title": "Some Guy made a Post!",
+    "post_url": "Somewebsite.com",
+    "user_id": 1
+}
+
+upvote:
+{
+    "user_id": 1,
+    "post_id": 1
+}
