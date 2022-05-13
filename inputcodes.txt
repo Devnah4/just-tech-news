@@ -1,0 +1,26 @@
+POST users:
+{
+    "username": "Guy",
+    "email": "someguysemail@email.com",
+    "password": "12scadoo"
+}
+
+POST posts:
+{
+    "title": "Some Guy made a Post!",
+    "post_url": "Somewebsite.com",
+    "user_id": 1
+}
+
+PUT upvote:
+{
+    "user_id": 1,
+    "post_id": 1
+}
+
+POST comments:
+{
+	"comment_text": "This is a comment bro!",
+	"user_id": 1,
+	"post_id": 1
+}
