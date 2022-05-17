@@ -36,7 +36,7 @@ router.get("/", (req, res) => {
     .then((dbPostData) => {
       // This will loop and map each object into a posts array
       const posts = dbPostData.map((post) => post.get({ plain: true }));
-      res.render("homepage", { posts });
+      res.render("homepage", {posts, loggedIn: req.session.loggedIn});
     })
     .catch((err) => {
       console.log(err);
