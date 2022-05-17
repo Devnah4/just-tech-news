@@ -102,12 +102,15 @@ router.post("/", (req, res) => {
 
 // upvote function
 router.put("/upvote", (req, res) => {
-  Post.upvote(req.body, { Vote, Comment, User })
-    .then((updatedPostData) => res.json(updatedPostData))
-    .catch((err) => {
+  // Verifies session has started
+  if (req.session) {
+    Post.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
+    .then(updatedPostData => res.json(updatedPostData))
+    .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
+  }
 });
 
 // Edit title of a post
