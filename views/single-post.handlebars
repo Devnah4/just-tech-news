@@ -14,6 +14,9 @@
     <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
   </div>
 </article>
+
+{{!-- Makes Form visible only when logged in --}}
+{{#if loggedIn}}
 {{!-- Creates comment submission form --}}
 <form class="comment-form">
   <div>
@@ -25,7 +28,9 @@
     <button type="button" class="upvote-btn">upvote</button>
   </div>
 </form>
+{{/if}}
 
+{{!-- Creates comment sections --}}
 <div class="comments">
   {{#each post.comments}}
   <section class="comment">
@@ -38,6 +43,10 @@
   </section>
   {{/each}}
 </div>
+
+{{!-- Only validates ig logged in --}}
+{{#if loggedIn}}
 {{!-- Calls comment and upvote scripts --}}
 <script src="/javascript/comment.js"></script>
 <script src="/javascript/upvote.js"></script>
+{{/if}}
