@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Activates the routes
-app.use(controllers);
+app.use(require('./controllers'));
 
 // Set up Handlebars.js
 app.engine('handlebars', hbs.engine);
